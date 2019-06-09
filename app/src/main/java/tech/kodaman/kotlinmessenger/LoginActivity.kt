@@ -1,5 +1,6 @@
 package tech.kodaman.kotlinmessenger
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,11 +30,15 @@ class LoginActivity : AppCompatActivity() {
                             return@addOnCompleteListener
                         }
 
-                        Log.d("RegisterActivity", "Sucessfully logged in ${it.result?.user?.uid}")
+                        Log.d("LoginActivity", "Sucessfully logged in ${it.result?.user?.uid}")
+                        // Launch messaging activity
+                        val intent = Intent(this, LatestMessagesActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
-                        Log.d("RegisterActivity", "Failed to log in! ${it.message}")
+                        Log.d("LoginActivity", "Failed to log in! ${it.message}")
                     }
         }
     }

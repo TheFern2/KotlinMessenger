@@ -96,7 +96,14 @@ class RegisterActivity : AppCompatActivity() {
 
                     Log.d("RegisterActivity", "Sucessfully created user with ${it.result?.user?.uid}")
                     Toast.makeText(this, "Sucessfully created user", Toast.LENGTH_SHORT).show()
-                    uploadImagetoFirebaseStorage()
+
+                    // here we need a sanity check to ensure a user can still register
+                    // without a photo
+                    if(selectedPhotoUri == null){
+                        saveUserToFirebaseDatabase("null");
+                    } else{
+                        uploadImagetoFirebaseStorage()
+                    }
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
@@ -135,6 +142,11 @@ class RegisterActivity : AppCompatActivity() {
         ref.setValue(user)
                 .addOnSuccessListener {
                     Log.d("RegisterActitivy", "Successfully created user")
+
+                    // Launch messaging activity
+                    val intent = Intent(this, LatestMessagesActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                 }
                 .addOnFailureListener{
                     Log.d("RegisterActitivy", "Failed to create user")
