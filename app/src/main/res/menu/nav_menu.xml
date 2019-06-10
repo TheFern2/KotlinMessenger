@@ -4,7 +4,7 @@
 
 
     <item android:id="@+id/menu_new_message"
-        android:title="New"
+        android:title="New Message"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_signout"
