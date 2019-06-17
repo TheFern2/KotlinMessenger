@@ -1,4 +1,4 @@
-package tech.kodaman.kotlinmessenger
+package tech.kodaman.kotlinmessenger.login
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
+import tech.kodaman.kotlinmessenger.R
+import tech.kodaman.kotlinmessenger.messages.LatestMessagesActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -23,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
             Log.d("LoginActivity", "email is $email")
             Log.d("LoginActivity", "password is $password")
 
+
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (!it.isSuccessful){
@@ -30,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
                             return@addOnCompleteListener
                         }
 
-                        Log.d("LoginActivity", "Sucessfully logged in ${it.result?.user?.uid}")
+                        Log.d("LoginActivity", "Successfully logged in ${it.result?.user?.uid}")
                         // Launch messaging activity
                         val intent = Intent(this, LatestMessagesActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

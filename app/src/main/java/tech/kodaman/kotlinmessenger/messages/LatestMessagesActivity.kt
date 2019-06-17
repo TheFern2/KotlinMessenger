@@ -1,4 +1,4 @@
-package tech.kodaman.kotlinmessenger
+package tech.kodaman.kotlinmessenger.messages
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
+import tech.kodaman.kotlinmessenger.R
+import tech.kodaman.kotlinmessenger.login.RegisterActivity
 
 class LatestMessagesActivity : AppCompatActivity() {
 

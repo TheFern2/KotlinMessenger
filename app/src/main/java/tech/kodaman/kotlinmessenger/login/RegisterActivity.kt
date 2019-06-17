@@ -1,4 +1,4 @@
-package tech.kodaman.kotlinmessenger
+package tech.kodaman.kotlinmessenger.login
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -8,11 +8,13 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
 import android.app.Activity
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.provider.MediaStore
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import tech.kodaman.kotlinmessenger.R
+import tech.kodaman.kotlinmessenger.messages.LatestMessagesActivity
+import tech.kodaman.kotlinmessenger.models.User
 import java.util.*
 
 
@@ -153,8 +155,4 @@ class RegisterActivity : AppCompatActivity() {
                 }
     }
 
-}
-
-class User(val uid:String, val username:String, val profileImageUrl:String){
-    constructor() : this("","","")
 }
