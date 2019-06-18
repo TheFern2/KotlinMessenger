@@ -8,7 +8,7 @@
     android:layout_marginBottom="12dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/fromRowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -16,11 +16,11 @@
         android:background="@drawable/rounded_input_field"
         android:maxWidth="240dp"
         android:padding="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/fromRowImageView"
+        app:layout_constraintTop_toTopOf="@+id/fromRowImageView" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/fromRowImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
