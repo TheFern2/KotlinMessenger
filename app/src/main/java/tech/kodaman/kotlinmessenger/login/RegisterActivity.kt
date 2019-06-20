@@ -101,9 +101,9 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this, "Successfully created user", Toast.LENGTH_SHORT).show()
 
                     // here we need a sanity check to ensure a user can still register
-                    // without a photo
+                    // and assign a default photo to user
                     if(selectedPhotoUri == null){
-                        saveUserToFirebaseDatabase("null");
+                        saveUserToFirebaseDatabase("https://firebasestorage.googleapis.com/v0/b/kotlinmessenger-a8d7b.appspot.com/o/images%2Fdefault-avatar.png?alt=media&token=8b630c60-824e-4a55-883e-362177b0cd6e");
                     } else{
                         uploadImagetoFirebaseStorage()
                     }

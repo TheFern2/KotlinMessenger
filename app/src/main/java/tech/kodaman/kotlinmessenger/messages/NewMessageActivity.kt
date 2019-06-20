@@ -82,11 +82,11 @@ class UserItem(val user: User): Item<ViewHolder>(){
         viewHolder.itemView.usernameTextView.text = user.username
         Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.usernameCircleView)
 
-        // load some arbitrary image is profileurl string is null
-        if(user.profileImageUrl.equals("null")){
-            Log.d("NewMessageActivity", "image is null for ${user.username}")
-            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/kotlinmessenger-a8d7b.appspot.com/o/images%2Fdefault-avatar.png?alt=media&token=8b630c60-824e-4a55-883e-362177b0cd6e").into(viewHolder.itemView.usernameCircleView)
-        }
+//        // load some arbitrary image is profileurl string is null
+//        if(user.profileImageUrl.equals("null")){
+//            Log.d("NewMessageActivity", "image is null for ${user.username}")
+//            Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/kotlinmessenger-a8d7b.appspot.com/o/images%2Fdefault-avatar.png?alt=media&token=8b630c60-824e-4a55-883e-362177b0cd6e").into(viewHolder.itemView.usernameCircleView)
+//        }
     }
 
 }

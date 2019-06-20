@@ -26,13 +26,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".messages.LatestMessagesActivity" />
         </activity>
-        <activity android:name=".messages.LatestMessagesActivity" />
-        <activity android:name=".login.RegisterActivity">
+        <activity android:name=".messages.LatestMessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".login.RegisterActivity">
+
         </activity>
         <activity android:name=".login.LoginActivity" />
     </application>

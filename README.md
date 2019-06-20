@@ -11,6 +11,7 @@
 
 ### 03
 - Third party circle view
+- Picasso image loading third party lib
 - Upload user to db, and image to firestore
 
 ### 04
